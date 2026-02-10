@@ -1,0 +1,153 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    background-color: #222; 
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- BACKGROUND DINÂMICO --- */
+.background-full {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: filter 0.6s ease-in-out; 
+}
+
+.blur-effect {
+    filter: blur(20px);
+}
+
+.overlay-dark {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: transparent; 
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- O CONSOLE FLUTUANTE --- */
+.floating-console {
+    display: flex;
+    width: 85vw;
+    height: 70vh;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5); 
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #023e8a;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* --- CONTAINERS LATERAIS --- */
+.stack-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #023e8a;
+    height: 100%;
+    flex: 0 0 auto;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stack-container.left { 
+    justify-content: flex-end; 
+    border-right: 1px solid rgba(0,0,0,0.3); 
+}
+
+.stack-container.right { 
+    justify-content: flex-start; 
+    border-left: 1px solid rgba(0,0,0,0.3); 
+}
+
+/* --- ABAS (BOTÕES) --- */
+.tab-button {
+    flex: 0 0 50px;
+    height: 100%;
+    background-color: #0352AA;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    border-right: 1px solid rgba(0,0,0,0.2);
+    border-left: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s;
+}
+
+.tab-button span {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.tab-button:hover { 
+    background-color: #056ce1; 
+    color: white; 
+}
+
+.tab-button.active {
+    background-color: #fff;
+    color: #0352AA;
+    flex: 0 0 60px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    z-index: 2; 
+    font-weight: 900;
+}
+
+/* --- ÁREA DO MAPA --- */
+#map-area {
+    flex: 1;
+    position: relative;
+    background: #e0e0e0;
+    z-index: 1; /* Definido base baixa para o mapa normal */
+}
+
+iframe { width: 100%; height: 100%; border: none; display: block; }
+
+/* --- BOTÃO DE TELA CHEIA (CORRIGIDO) --- */
+#btn-fullscreen {
+    position: absolute;
+    bottom: 25px; /* Margem de baixo */
+    right: 25px;  /* Margem da direita */
+    
+    z-index: 100; /* Fica acima do iframe */
+    
+    background-color: rgba(3, 82, 170, 0.9);
+    color: white;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#btn-fullscreen:hover {
+    background-color: #fff;
+    color: #0352AA;
+    transform: scale(1.1);
+}
+
+/* --- CLASSE DE TELA CHEIA --- */
+.map-fullscreen {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 99999 !important; 
+    
+    border-radius: 0 !important;
+}

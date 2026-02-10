@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapas Interativos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="bg-layer" class="background-full"></div>
+    
+    <div class="floating-console">
+        
+        <div id="left-stack" class="stack-container left"></div>
+
+        <main id="map-area">
+            <button id="btn-fullscreen" onclick="toggleFullscreen()" title="Tela Cheia">
+                <svg id="icon-expand" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                </svg>
+                <svg id="icon-compress" viewBox="0 0 24 24" width="24" height="24" style="display: none;">
+                    <path fill="currentColor" d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/>
+                </svg>
+            </button>
+
+            <iframe id="map-frame" name="map-frame" src="" frameborder="0"></iframe>
+        </main>
+
+        <div id="right-stack" class="stack-container right"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
