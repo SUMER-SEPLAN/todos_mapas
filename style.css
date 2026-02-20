@@ -114,7 +114,7 @@ iframe { width: 100%; height: 100%; border: none; display: block; }
 /* --- BOTÃO DE TELA CHEIA (CORRIGIDO) --- */
 #btn-fullscreen {
     position: absolute;
-    bottom: 25px; /* Margem de baixo */
+    bottom: 40px; /* Margem de baixo */
     right: 25px;  /* Margem da direita */
     
     z-index: 100; /* Fica acima do iframe */
